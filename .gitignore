@@ -4,10 +4,6 @@ target/
 # Arquivos de compilação Java
 *.class
 
-# Arquivos de configuração do Maven
-pom.xml.tag
-pom.xml.releaseBackup
-release.properties
 
 # Arquivos de configuração específicos de IDEs
 .classpath
@@ -25,5 +21,4 @@ release.properties
 surefire-reports/
 cucumber-reports/
 
-# Arquivos de configuração específicos do ambiente
-config.properties
+
