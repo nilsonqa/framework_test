@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -17,8 +18,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import projeto.ui.drivers.Drivers;
 
-public class Metodos extends Drivers {
+public class Methods extends Drivers {
 
+	
+	/**
+	 * Escrever em um elemento WEB, informar o elemento e o texto desejado
+	 * 
+	 */
 	public void escrever(By element, String texto) {
 		try {
 			driver.findElement(element).sendKeys(texto);
@@ -27,6 +33,10 @@ public class Metodos extends Drivers {
 		}
 	}
 
+	/**
+	 * Clicar em um botão informando qual o elemento 
+	 * @param element
+	 */
 	public void clicar(By element) {
 		try {
 			driver.findElement(element).click();
@@ -102,18 +112,18 @@ public class Metodos extends Drivers {
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 	}
 
-	public void tirarPrint(String nomeDoArquivo) {
+	public void tirarPrint(String nomeDoTeste,String nomeDoArquivo) {
 		// Captura o screenshot como arquivo
 		File screenshotFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
 			// Copia o screenshot para um arquivo permanente
-			File destino = new File(nomeDoArquivo + ".png");
+			File destino = new File("./evidencias/"+nomeDoTeste+"/"+nomeDoArquivo + ".png");
 			org.apache.commons.io.FileUtils.copyFile(screenshotFile, destino);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
-
+	
 	public void validarUrl(String url) {
 		try {
 			assertEquals(driver.getCurrentUrl(), url);

@@ -19,5 +19,6 @@ target/
 # Pasta de relatórios
 surefire-reports/
 cucumber-reports/
+evidencias/
 
 

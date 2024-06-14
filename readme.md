@@ -34,4 +34,5 @@ Para executar os testes, você pode usar sua IDE para executar os testes JUnit o
 Para executar os testes usando Maven na linha de comando, use o seguinte comando:
 
 ```bash
-mvn test -Dtest=Executa
+mvn test -Dtest=Execute
+
